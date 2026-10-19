@@ -1,0 +1,56 @@
+Documentazione
+
+
+1. Descrizione progetto
+Il progetto consiste in un programma in Java per gestire un conto 
+corrente bancario intestato a una persona (di cui si conoscono nome 
+e cognome). 
+
+L'applicazione si basa su due classi principali:
+- Persona: gestisce i dati anagrafici del titolare.
+- ContoCorrente: gestisce il saldo, i versamenti e i prelievi, 
+  impedendo che il conto vada in negativo.
+
+
+2. Descrizionne della classi, attributi e metodi
+
+
+--- Classe: Persona ---
+Rappresenta l'intestatario del conto corrente.
+
+Attributi (privati):
+- nome (String): il nome del titolare.
+- cognome (String): il cognome del titolare.
+
+Metodi principali:
+- Persona(nome, cognome): costruttore per inizializzare il titolare.
+- getNome() / setNome(nome): getter e setter per il nome.
+- getCognome() / setCognome(cognome): getter e setter per il cognome.
+- toString(): restituisce il nome e cognome completi sotto forma di testo.
+
+
+--- Classe: ContoCorrente ---
+Gestisce la logica del conto bancario e il saldo disponibile.
+
+Attributi (privati):
+- titolare (Persona): l'oggetto Persona a cui fa riferimento il conto.
+- saldo (float): la somma di denaro attualmente presente sul conto.
+
+
+Metodi principali:
+
+- ContoCorrente(titolare, capitaleIniziale): costruttore che assegna 
+  il titolare e imposta il capitale di partenza (se positivo).
+- effettuaVersamento(versamento): incrementa il saldo dell'importo 
+  depositato (solo se positivo).
+- effettuaPrelievo(prelievo): controlla se l'importo richiesto è
+  disponibile sul saldo. Se è disponibile, sottrae la cifra e 
+  restituisce true; altrimenti blocca l'operazione e restituisce false 
+  (impedendo al conto di andare in negativo).
+- getTitolare() / setTitolare(titolare): getter e setter per il titolare.
+- getSaldo() / setSaldo(saldo): getter e setter per il saldo.
+- toString(): restituisce i dettagli del conto (titolare e saldo).
+- main(args): esegue una simulazione per verificare la creazione del 
+  conto, i versamenti, i prelievi validi e i prelievi rifiutati.
+
+
